@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import LoginButton from './LoginButton';
-import LogoutButton from './LogoutButton';
-import Profile from './Profile';
-import PrivateRoute from './PrivateRoute';
+import LoginButton from './components/LoginButton';
+import LogoutButton from './components/LogoutButton';
+import Profile from './components/Profile';
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   return (
@@ -14,6 +14,7 @@ function App() {
         <Profile />
         <Switch>
           <PrivateRoute path="/protected" component={ProtectedComponent} />
+          <PrivateRoute path="/upload" component={Upload} />
         </Switch>
       </div>
     </Router>
@@ -21,5 +22,6 @@ function App() {
 }
 
 const ProtectedComponent = () => <h3>Protected</h3>;
+const Upload = () => <h3>Upload</h3>;  // You will replace this with your actual upload component
 
 export default App;
