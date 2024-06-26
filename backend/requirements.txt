@@ -1,5 +1,5 @@
-Flask
-Flask-Cors
+Flask==2.0.2
+Flask-Cors==20.1.0
 Flask-JWT-Extended
 requests
 python-dotenv
