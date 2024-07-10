@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LoginButton from './components/LoginButton';
 import LogoutButton from './components/LogoutButton';
 import Profile from './components/Profile';
@@ -12,10 +12,10 @@ function App() {
         <LoginButton />
         <LogoutButton />
         <Profile />
-        <Switch>
-          <PrivateRoute path="/protected" component={ProtectedComponent} />
-          <PrivateRoute path="/upload" component={Upload} />
-        </Switch>
+        <Routes>
+          <Route path="/protected" element={<PrivateRoute component={ProtectedComponent} />} />
+          <Route path="/upload" element={<PrivateRoute component={Upload} />} />
+        </Routes>
       </div>
     </Router>
   );
